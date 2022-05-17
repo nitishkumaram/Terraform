@@ -7,11 +7,11 @@
 -terraform plan -var "username=NK" -var "xyz=NitishKumar"
 Terraform commands:
 
--terraform apply
--terraform apply --auto-approve
--terraform destroy
--terraform destroy --target SOURCE_TYPE.localValue
--terraform plan
+- terraform apply
+- terraform apply --auto-approve
+- terraform destroy
+- terraform destroy --target SOURCE_TYPE.localValue
+- terraform plan
 - terraform validate
 - terraform refresh
 - terraform show
