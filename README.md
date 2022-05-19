@@ -21,3 +21,4 @@
 - terraform providers
 - terraform init
 - value = file("${path.module}/file.txt") -to read the content of the file
+- 
