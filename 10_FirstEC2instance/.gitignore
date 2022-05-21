@@ -3,3 +3,4 @@ id_rsa
 id_rsa.pub
 terraform.tfstate
 terraform.tfstate.backup
+.terraform.lock.hcl
