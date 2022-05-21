@@ -1,6 +1,6 @@
 # Creating Security Group
-resource "aws_security_group" "allow_tls" {
-  name        = "allow_tls"
+resource "aws_security_group" "my_security_group" {
+  name        = "my_security_group"
   description = "Allow TLS inbound traffic"
 
   # Using Dynamic block i.e. loop
@@ -27,5 +27,5 @@ resource "aws_security_group" "allow_tls" {
 }
 
 output "securitygroupdetails" {
-  value = aws_security_group.allow_tls.id
+  value = aws_security_group.my_security_group.id
 }

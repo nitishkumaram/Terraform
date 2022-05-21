@@ -1,4 +1,5 @@
-# Terraform
+# Terraform- https://www.terraform.io/language/expressions/
+
 
 - In case if you want to pass variable from command you can do it by
 - terraform plan -var "username=NitishKumar"
@@ -37,3 +38,6 @@
 #TASK 2-
 - nginx install
 - /var/www/html/index.nginx-debian.html -> This is Nitish
+
+- terraform taint aws_security_group.my_security_group (to taint any resource)
+- 
