@@ -24,8 +24,7 @@
 - assign first key to newly created instance.
 - create a security group
 - assign that group to instance.
-
-
+--------------------------------------------------------------------------
 - terraform init
 - value = file("${path.module}/file.txt") -to read the content of the file
 - ssh -i id_rsa ubuntu@ip-address
@@ -34,7 +33,7 @@
 - apt-get install nginx
 - cd /var/www/html/
 - echo "This is Nitish" > index.nginx-debian.html
-
+--------------------------------------------------------------------------
 #TASK 2-
 - nginx install
 - /var/www/html/index.nginx-debian.html -> This is Nitish
