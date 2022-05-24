@@ -16,15 +16,33 @@ resource "aws_instance" "web" {
   # sudo echo "Hi Nitish !!" > /var/www/html/index.nginx-debian.html
   # EOF
 
-  #file, local-exec, remote-exec
+  #file provisioner, remote-exec
+
+  connection {
+    type        = "ssh"
+    user        = "ubuntu"
+    private_key = file("${path.module}/id_rsa")
+    host        = aws_instance.web.public_ip
+  }
+
+# If you want to move file
   provisioner "file" {
     source      = "script.sh"     #from local workspace
     destination = "/tmp/script.sh" #remote AWS machine
-    connection {
-      type        = "ssh"
-      user        = "ubuntu"
-      private_key = file("${path.module}/id_rsa")
-      host        = "${aws_instance.web.public_ip}"
-    }
   }
+
+  # If you want to create a file and put content
+  provisioner "file" {
+    content     = "This is Nitish"  #from local workspace
+    destination = "/tmp/content.sh" #remote AWS machine
+  }
+
+  # if you want to copy folder into the dest
+  provisioner "file" {
+    source = "MyFile/"
+    destination = "/tmp/MyFile"
+  }
+
+  # local-exec Provisioner
+  
 }
