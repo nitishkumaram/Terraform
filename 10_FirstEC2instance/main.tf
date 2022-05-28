@@ -60,4 +60,25 @@ resource "aws_instance" "web" {
     command = "print ('Hello World')"
   }
 
+# Command to get the envname--> grep -i envname env.txt
+  provisioner "local-exec" {
+    # This command will ensure that terraform continue to create resource even if it fails to create this resource
+    on_failure = continue 
+    
+    command = "env>env.txt"
+    environment {
+      envname = "envvalue"
+    }
+  }
+
+  provisioner "local-exec" {
+    command = "echo 'at Create'"
+  }
+
+  # This provisoner will run when it will encounter the destroy command
+  provisioner "local-exec" {
+    when = destroy
+    command = "echo 'at destroy"
+  }
+
 }
