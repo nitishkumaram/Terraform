@@ -1,4 +1,4 @@
 #!/bin/bash
-sudo apt-get update
-sudo apt-get install nginx -y
-sudo echo "Hi Nitish" >/var/www/html/index.nginx-debian.html
+apt-get update
+apt-get install nginx -y
+echo "Hi Nitish" >/var/www/html/index.nginx-debian.html

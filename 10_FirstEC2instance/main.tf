@@ -43,6 +43,21 @@ resource "aws_instance" "web" {
     destination = "/tmp/MyFile"
   }
 
-  # local-exec Provisioner
-  
+  # local-exec Provisioner- Coomand is mandatory
+  provisioner "local-exec" {
+    command = "echo ${self.public_ip} > /tmp/mypublicip.txt"
+  }
+
+  provisioner "local-exec" {
+    working_dir = "/tmp/"
+    command = "echo ${self.public_ip} > /mypublicipintmp.txt"
+  }
+
+  provisioner "local-exec" {
+    interpreter = [
+      "/usr/bin/python", "-c"
+    ]
+    command = "print ('Hello World')"
+  }
+
 }
