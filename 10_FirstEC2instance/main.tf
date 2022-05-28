@@ -64,7 +64,7 @@ resource "aws_instance" "web" {
   provisioner "local-exec" {
     # This command will ensure that terraform continue to create resource even if it fails to create this resource
     on_failure = continue 
-    
+
     command = "env>env.txt"
     environment {
       envname = "envvalue"
@@ -79,6 +79,17 @@ resource "aws_instance" "web" {
   provisioner "local-exec" {
     when = destroy
     command = "echo 'at destroy"
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "ifconfig> /tmp/ifconfig.output",
+      "echo 'Hello Nitish'>/tmp/test.txt"
+    ]
+  }
+
+  provisioner "remote-exec" {
+    script = "./testscript.sh"
   }
 
 }
