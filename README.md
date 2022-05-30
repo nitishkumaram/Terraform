@@ -41,4 +41,34 @@
 - /var/www/html/index.nginx-debian.html -> This is Nitish
 
 - terraform taint aws_security_group.my_security_group (to taint any resource)
-- 
+- terraform graph | dot -Tpdf > graph.pdf #Graphviz should be installed in your system
+
+--------------------------------------------------------------------------
+
+# WORKSPACE
+- terraform workspace -help
+- terraform plan --var-file dev-terraform.tfvars
+- terraform workspace show
+- terraform workspace new dev
+- terraform workspace select dev
+- terraform workspace list
+- terraform workspace delete prod
+- terraform apply --auto-approve --var-file dev-terraform.tfvars
+- terraform workspace delete dev
+
+--------------------------------------------------------------------------
+
+# MODULES
+
+- terraform init
+- The module installer supports installation from a number of different source types, as listed below.
+1 Local paths
+2 Terraform Registry
+3 GitHub
+4 Bitbucket
+5 Generic Git, Mercurial repositories
+6 HTTP URLs
+6 S3 buckets
+7 GCS buckets
+8 Modules in Package Sub-directories
+- URL requires of above sources in module source parameter.
