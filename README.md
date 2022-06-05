@@ -72,3 +72,19 @@
 7 GCS buckets
 8 Modules in Package Sub-directories
 - URL requires of above sources in module source parameter.
+
+# AWS CLI
+
+- aws configure
+- /Users/nitishkumar/.aws
+- cat credential
+- Provided S3 Full Permission in IAM
+
+# Terraform Migrate Backend
+
+- Comment out the backend section of code
+- terraform init -migrate-state
+
+# Remote Backend State Locking using S3 and DynamoDB
+
+- dynamodb_table = "nitish-table-tf"
